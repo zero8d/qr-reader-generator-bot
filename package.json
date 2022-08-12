@@ -1,0 +1,21 @@
+{
+  "name": "qrgrbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node build/bot"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/qrcode": "^1.4.2",
+    "dotenv": "^16.0.1",
+    "grammy": "^1.10.1",
+    "jimp": "^0.16.0",
+    "jsqr": "^1.4.0",
+    "qr-scanner": "^1.4.1",
+    "qrcode": "^1.5.1"
+  }
+}
