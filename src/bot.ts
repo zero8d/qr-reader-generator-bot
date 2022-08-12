@@ -5,7 +5,7 @@ import { Bot, InputFile } from 'grammy'
 import jimp from 'jimp'
 import jsQR from 'jsqr'
 import QRCode from 'qrcode'
-const token = '5481786992:AAHIoP-AkGgwTJyxCxUGyQGDKPskGWtw8mQ'
+const token = process.env.BOT_TOKEN
 const bot = new Bot(token)
 bot.command('start', ctx => {
   ctx.reply(
