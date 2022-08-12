@@ -1,11 +1,12 @@
 import dotenv from 'dotenv'
-dotenv.config({ path: __dirname + '../.env' })
+import path from 'path'
+dotenv.config({ path: path.join(__dirname, '../.env') })
 console.log(__dirname)
 import { Bot, InputFile } from 'grammy'
 import jimp from 'jimp'
 import jsQR from 'jsqr'
 import QRCode from 'qrcode'
-const token = process.env.BOT_TOKEN
+const token = process.env.BOT_TOKEN || ''
 const bot = new Bot(token)
 bot.command('start', ctx => {
   ctx.reply(
