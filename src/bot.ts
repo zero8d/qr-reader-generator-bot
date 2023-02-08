@@ -21,11 +21,12 @@ bot.command('help', ctx => {
 
 bot.on('msg:text', async ctx => {
   const text = ctx.msg.text
+  await ctx.replyWithChatAction('upload_photo')
   const qrcodebuff = await QRCode.toBuffer(text)
-
   ctx.replyWithPhoto(new InputFile(qrcodebuff))
 })
 bot.on(':photo', async ctx => {
+  await ctx.replyWithChatAction('typing')
   const fileOb = await ctx.getFile()
   const result = await readQrCode(
     `https://api.telegram.org/file/bot${token}/${fileOb.file_path}`
@@ -41,3 +42,4 @@ const readQrCode = async (file: string) => {
   return result
 }
 bot.start()
+console.log('Bot has been started')
